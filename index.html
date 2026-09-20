@@ -4,249 +4,179 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>公開・集客ボトルネック診断LIVE｜トレーナー集客ノート</title>
-<meta name="description" content="毎週木曜21:00、実際のトレーナーの集客状況を公開で診断。「集客できない」を一括りにせず、どこが詰まっているかを特定し、一番大きなボトルネックと次のActionを明確にします。">
+<meta name="description" content="実際の集客状況を一緒に見ながら、「今どこで詰まっているのか」と「次に何をやるべきか」を整理します。毎週木曜 21:00。">
 <meta property="og:title" content="公開・集客ボトルネック診断LIVE｜トレーナー集客ノート">
-<meta property="og:description" content="毎週木曜21:00、実際のトレーナーの集客状況を公開で診断。どこが詰まっているかを特定し、次のActionまで明確にします。">
+<meta property="og:description" content="実際の集客状況を一緒に見ながら、「今どこで詰まっているのか」と「次に何をやるべきか」を整理します。毎週木曜 21:00。">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:#FFFFFF; --panel:#F7F7F6; --dark:#111110;
-    --ink:#16150F; --ink-soft:#56554E; --ink-faint:#9A988F;
-    --ink-on-dark:#F5F4F0; --ink-on-dark-soft:#A8A69D;
-    --line:#E7E6E0; --line-soft:#EFEEE9; --accent:#FF5A28;
+    --bg:#FFFFFF; --ink:#141412; --ink-soft:#5A5952; --ink-faint:#9C9A91;
+    --line:#E9E8E3; --accent:#FF5A28;
   }
   * { box-sizing:border-box; }
   html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
-  body { margin:0; background:var(--bg); color:var(--ink); font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic","Noto Sans JP",sans-serif; line-height:1.85; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic","Noto Sans JP",sans-serif; line-height:2; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
   .mono { font-family:"IBM Plex Mono","SF Mono",ui-monospace,monospace; }
-  h1,h2,h3 { text-wrap:balance; margin:0; font-weight:700; letter-spacing:-0.01em; }
+  h1,h2 { margin:0; font-weight:700; letter-spacing:-0.01em; text-wrap:balance; }
   p { margin:0; }
   a { color:inherit; }
-  .wrap { max-width:680px; margin:0 auto; padding:0 24px; }
+  .wrap { max-width:640px; margin:0 auto; padding:0 28px; }
 
-  .topbar { position:sticky; top:0; z-index:60; background:rgba(255,255,255,0.96); border-bottom:1px solid var(--line); }
-  .topbar-inner { max-width:680px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
-  .brand { font-size:12.5px; letter-spacing:0.04em; color:var(--ink-soft); }
-  .brand b { color:var(--ink); }
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; background:var(--dark); color:#fff; font-weight:700; text-decoration:none; border-radius:4px; }
-  .btn .arrow { color:var(--accent); font-family:"IBM Plex Mono",monospace; }
-  .btn-sm { font-size:13px; padding:10px 18px; border-radius:3px; white-space:nowrap; }
-  .btn-lg { font-size:16px; padding:19px 40px; }
-  .btn-light { background:#fff; color:var(--dark); }
+  .head { padding:34px 0 0; }
+  .brand { display:inline-flex; align-items:center; gap:10px; font-size:12.5px; letter-spacing:0.06em; color:var(--ink-soft); }
+  .brand::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--accent); }
 
-  section { padding:72px 0; border-top:1px solid var(--line); }
-  .bg-panel { background:var(--panel); }
-  .bg-dark { background:var(--dark); color:var(--ink-on-dark); border-top:1px solid var(--dark); }
-  .sec-label { font-size:11px; font-weight:700; letter-spacing:0.12em; color:var(--ink-faint); margin-bottom:18px; }
-  .bg-dark .sec-label { color:var(--ink-on-dark-soft); }
-  .sec-title { font-size:clamp(21px,4vw,25px); line-height:1.6; margin-bottom:28px; }
-  .sec-body { font-size:14.5px; color:var(--ink-soft); line-height:2; max-width:54ch; }
-  .bg-dark .sec-body { color:var(--ink-on-dark-soft); }
+  /* First view */
+  .hero { padding:clamp(72px,14vh,132px) 0 clamp(84px,14vh,140px); }
+  .hero h1 { font-size:clamp(30px,6.2vw,48px); line-height:1.36; }
+  .hero .lead { margin-top:34px; font-size:clamp(16px,2.4vw,18px); line-height:2.1; color:var(--ink); }
+  .when { margin-top:44px; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 18px; }
+  .when .w { font-size:clamp(20px,3.4vw,24px); font-weight:700; }
+  .when .n { font-size:13px; color:var(--ink-soft); }
+  .cta { margin-top:40px; display:inline-flex; align-items:center; gap:12px; background:var(--ink); color:#fff; font-size:16px; font-weight:700; text-decoration:none; padding:18px 34px; border-radius:2px; letter-spacing:0.02em; }
+  .cta .arrow { color:var(--accent); font-family:"IBM Plex Mono",monospace; }
+  .note { margin-top:22px; font-size:13px; color:var(--ink-soft); line-height:1.9; text-wrap:pretty; }
+  .nb { white-space:nowrap; }
 
-  /* Hero */
-  .hero { padding:56px 0 64px; border-top:none; }
-  .hero-frame { display:flex; justify-content:space-between; align-items:center; padding-bottom:16px; margin-bottom:32px; border-bottom:1px solid var(--line); font-size:10.5px; font-weight:600; letter-spacing:0.1em; color:var(--ink-faint); }
-  .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:11.5px; font-weight:600; letter-spacing:0.1em; color:var(--ink-faint); margin-bottom:24px; }
-  .eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--accent); }
-  .hero h1 { font-size:clamp(30px,6.4vw,44px); line-height:1.4; }
-  .hero .sub { margin-top:24px; font-size:15.5px; color:var(--ink-soft); line-height:2; text-wrap:pretty; }
-  .next-box { margin-top:36px; border:1px solid var(--ink); padding:22px 24px; display:flex; flex-wrap:wrap; gap:8px 28px; align-items:baseline; }
-  .next-box .k { font-size:11px; font-weight:700; letter-spacing:0.12em; color:var(--ink-faint); width:100%; }
-  .next-box .v { font-size:clamp(22px,4.6vw,30px); font-weight:700; line-height:1.3; }
-  .next-box .v small { font-size:13px; font-weight:600; color:var(--ink-soft); margin-left:6px; }
-  .next-box .w { font-size:13px; color:var(--ink-soft); }
-  .hero-cta { margin-top:32px; display:flex; flex-wrap:wrap; gap:14px 18px; align-items:center; }
-  .hero-note { width:100%; font-size:12.5px; color:var(--ink-faint); line-height:1.9; }
+  /* Sections: whitespace only */
+  section { padding:clamp(56px,9vh,88px) 0; }
+  .hair { border-top:1px solid var(--line); }
+  .label { display:flex; align-items:center; gap:10px; font-size:11px; letter-spacing:0.14em; color:var(--ink-faint); margin-bottom:26px; }
+  .label::before { content:""; width:14px; height:2px; background:var(--accent); }
+  h2 { font-size:clamp(23px,4.4vw,30px); line-height:1.6; }
+  .body { margin-top:26px; font-size:15.5px; color:var(--ink-soft); line-height:2.1; }
 
-  /* Perspectives map */
-  .map { display:grid; grid-template-columns:1fr; margin-top:28px; border:1px solid var(--line); background:var(--bg); }
-  @media (min-width:768px){ .map { grid-template-columns:1fr 1fr; } .node:nth-child(odd){ border-right:1px solid var(--line-soft); } .node:nth-last-child(-n+2){ border-bottom:none; } }
-  .node { padding:24px; border-bottom:1px solid var(--line-soft); display:flex; gap:16px; align-items:flex-start; }
-  .node:last-child { border-bottom:none; }
-  .marker { flex-shrink:0; width:34px; height:34px; border-radius:50%; border:1px solid var(--ink); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; }
-  .node .en { display:block; font-size:13px; font-weight:700; letter-spacing:0.04em; }
-  .node .jp { display:block; margin-top:2px; font-size:14.5px; font-weight:700; }
-  .node .ds { display:block; margin-top:6px; font-size:13.5px; color:var(--ink-soft); }
+  .lens { margin-top:30px; display:grid; grid-template-columns:repeat(3,1fr); gap:22px 20px; }
+  .lens div { display:flex; flex-direction:column; gap:2px; }
+  .lens .en { font-size:12.5px; letter-spacing:0.04em; color:var(--ink); }
+  .lens .jp { font-size:13px; color:var(--ink-soft); }
 
-  /* Output (dark) */
-  .out-grid { display:grid; grid-template-columns:1fr; gap:16px; margin-top:8px; }
-  @media (min-width:640px){ .out-grid { grid-template-columns:1fr 1fr; } }
-  .out { border:1px solid rgba(245,244,240,0.28); padding:26px 24px; }
-  .out .n { font-size:11px; letter-spacing:0.12em; color:var(--ink-on-dark-soft); font-weight:700; }
-  .out .t { margin-top:10px; font-size:19px; font-weight:700; line-height:1.5; }
-  .out .d { margin-top:8px; font-size:13.5px; color:var(--ink-on-dark-soft); }
+  .out { margin-top:36px; }
+  .out p { padding:22px 0; border-top:1px solid var(--line); }
+  .out p:last-child { border-bottom:1px solid var(--line); }
+  .out b { display:block; font-size:clamp(19px,3.4vw,22px); }
+  .out span { display:block; margin-top:6px; font-size:14.5px; color:var(--ink-soft); line-height:1.9; }
 
-  /* Theme slot */
-  .theme-card { border:1px solid var(--ink); background:var(--bg); padding:28px 26px; margin-top:8px; }
-  .theme-card .k { font-size:11px; font-weight:700; letter-spacing:0.12em; color:var(--ink-faint); }
-  .theme-card .t { margin-top:12px; font-size:19px; font-weight:700; line-height:1.55; }
-  .theme-card .d { margin-top:10px; font-size:14px; color:var(--ink-soft); line-height:1.95; }
-  .theme-card .tags { margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; }
-  .tag { font-size:11px; font-weight:700; letter-spacing:0.06em; padding:4px 10px; border:1px solid var(--line); color:var(--ink-soft); }
+  .next { margin-top:30px; }
+  .next .d { font-size:13px; letter-spacing:0.08em; color:var(--ink-faint); }
+  .next .t { margin-top:8px; font-size:clamp(19px,3.4vw,22px); font-weight:700; line-height:1.6; text-wrap:pretty; }
+  .next .s { margin-top:8px; font-size:14.5px; color:var(--ink-soft); }
+  .tags { margin-top:14px; display:flex; flex-wrap:wrap; gap:8px 16px; font-size:12.5px; color:var(--ink-soft); }
+  .tags span::before { content:"# "; color:var(--accent); }
 
-  /* Two entries */
-  .entries { display:grid; grid-template-columns:1fr; gap:16px; margin-top:8px; }
-  @media (min-width:640px){ .entries { grid-template-columns:1fr 1fr; } }
-  .entry { background:var(--bg); border:1px solid var(--line); padding:28px 24px; display:flex; flex-direction:column; }
-  .entry .k { font-size:11px; font-weight:700; letter-spacing:0.12em; color:var(--ink-faint); }
-  .entry h3 { margin-top:10px; font-size:19px; line-height:1.5; }
-  .entry p { margin-top:10px; font-size:14px; color:var(--ink-soft); flex:1; }
-  .entry .btn { margin-top:20px; font-size:14px; padding:14px 20px; }
-  .entry .note { margin-top:14px; padding-top:14px; border-top:1px solid var(--line-soft); font-size:13px; color:var(--ink); flex:none; }
-
-  /* Past cases */
-  .cases { margin-top:8px; display:flex; flex-direction:column; }
-  .case { border-top:1px solid var(--line-soft); padding:22px 0; }
-  .case:first-child { border-top:none; }
-  .case .dt { font-size:11px; font-weight:700; letter-spacing:0.1em; color:var(--ink-faint); }
-  .case .tt { margin-top:6px; font-size:16px; font-weight:700; }
-  .case .bn { margin-top:8px; font-size:13.5px; color:var(--ink-soft); }
+  .cases { margin-top:26px; }
+  .case { padding:20px 0; border-top:1px solid var(--line); }
+  .case .dt { font-size:12px; letter-spacing:0.1em; color:var(--ink-faint); }
+  .case .tt { margin-top:4px; font-size:16.5px; font-weight:700; }
+  .case .bn { margin-top:6px; font-size:14px; color:var(--ink-soft); }
   .case .bn b { color:var(--ink); }
 
-  /* Final CTA */
-  .final { text-align:center; }
-  .final .sec-title { max-width:26ch; margin-left:auto; margin-right:auto; }
-  .final .sec-body { margin:0 auto 32px; }
-  .cross { margin-top:20px; font-size:12.5px; color:var(--ink-soft); }
-  .cross a { color:var(--ink); text-decoration:underline; }
-  .form-wrap { background:var(--bg); border:1px solid var(--line); border-radius:6px; overflow:hidden; text-align:left; }
-  .form-wrap iframe { display:block; width:100%; height:1180px; border:0; }
-  .form-fallback { margin-top:16px; font-size:12.5px; color:var(--ink-faint); }
-  .form-fallback a { color:var(--accent); text-decoration:underline; }
-  .final .sec-body { margin:0 auto 28px; }
+  .formbox { margin-top:34px; border:1px solid var(--line); border-radius:2px; overflow:hidden; }
+  .formbox iframe { display:block; width:100%; height:1180px; border:0; }
+  .fallback { margin-top:16px; font-size:12.5px; color:var(--ink-faint); }
+  .fallback a { color:var(--accent); text-decoration:underline; }
 
-  footer { padding:36px 0 64px; text-align:center; font-size:12px; color:var(--ink-faint); border-top:1px solid var(--line); }
+  footer { padding:56px 0 84px; font-size:12px; color:var(--ink-faint); border-top:1px solid var(--line); }
   [hidden] { display:none !important; }
-  @media (max-width:480px){ .brand{ font-size:11px; white-space:nowrap; } .btn-sm{ font-size:12px; padding:9px 12px; } .btn-lg { width:100%; padding:19px 20px; } .form-wrap iframe { height:1320px; } .hero-frame span:last-child{ display:none; } }
+  @media (max-width:480px) {
+    .wrap { padding:0 24px; }
+    .lens { grid-template-columns:repeat(2,1fr); }
+    .cta { width:100%; justify-content:center; }
+    .formbox iframe { height:1320px; }
+  }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="brand mono"><b>トレーナー集客ノート</b> / LIVE</div>
-    <a class="btn btn-sm" data-cta="topbar" href="#apply">公開診断に応募する</a>
+<header class="head">
+  <div class="wrap"><span class="brand mono">トレーナー集客ノート</span></div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <h1>公開・集客ボトルネック<br>診断LIVE</h1>
+    <p class="lead">実際の集客状況を一緒に見ながら、<br>「今どこで詰まっているのか」と<br>「次に何をやるべきか」を整理します。</p>
+    <div class="when">
+      <span class="w">毎週木曜 21:00</span>
+      <span class="n" id="nextDate">次回 9/24(木) 21:00(初回)</span>
+    </div>
+    <a class="cta" data-cta="hero" href="#apply">公開診断に応募する<span class="arrow">→</span></a>
+    <p class="note">視聴方法は、<span class="nb">トレーナー集客ノートLINE公式で</span> <span class="nb">ご案内します。</span></p>
   </div>
 </div>
 
-<header class="hero">
+<section class="hair" id="about">
   <div class="wrap">
-    <div class="hero-frame mono"><span>PUBLIC DIAGNOSIS LIVE</span><span>WEEKLY — THU 21:00</span></div>
-    <span class="eyebrow mono">トレーナー専門 · 毎週木曜 21:00</span>
-    <h1>公開・集客ボトルネック<br>診断LIVE</h1>
-    <p class="sub">
-      実際のトレーナーの集客状況を、公開で診断する番組です。<br>
-      「集客できない」を一括りにせず、どこが詰まっているのかを特定し、一番大きなボトルネックと次にやるActionまで明確にします。
-    </p>
-
-    <div class="next-box" id="nextBox">
-      <span class="k mono">NEXT LIVE</span>
-      <span class="v" id="nextDate">9/24(木) 21:00<small>初回開催</small></span>
-      <span class="w">毎週木曜 21:00 開催</span>
-    </div>
-
-    <div class="hero-cta">
-      <a class="btn btn-lg" data-cta="hero" href="#apply">公開診断に応募する<span class="arrow">→</span></a>
-      <div class="hero-note"><p>応募はこのページのフォームから受け付けています。</p><p>LIVEの視聴方法は、トレーナー集客ノートLINE公式でご案内します。</p></div>
-    </div>
-  </div>
-</header>
-
-<section id="about" class="bg-panel">
-  <div class="wrap">
-    <div class="sec-label mono">ABOUT</div>
-    <h2 class="sec-title">「集客できない」の中身を、<br>公開の場で分解する。</h2>
-    <p class="sec-body">
-      SNSが悪いのか、LINEが育っていないのか、LPなのか、提案なのか。同じ「集客できない」でも、詰まっている場所は人によって違います。この番組では、実際のトレーナーの状況を見ながら、どこで止まっているかを特定していきます。
-    </p>
+    <div class="label mono">ABOUT</div>
+    <h2>「集客できない」を、<br>ひとまとめにしない。</h2>
+    <p class="body">SNSなのか、LINEなのか、LPなのか、提案なのか。同じ「集客できない」でも、詰まっている場所は人によって違います。毎週、実際のトレーナーの状況を見ながら、どこで止まっているのかを特定していきます。</p>
   </div>
 </section>
 
-<section id="lens">
+<section class="hair" id="lens">
   <div class="wrap">
-    <div class="sec-label mono">DIAGNOSTIC LENS</div>
-    <h2 class="sec-title">毎回、この6つの観点で整理します。</h2>
-    <div class="map">
-      <div class="node"><span class="marker mono">01</span><span><span class="en mono">Traffic</span><span class="jp">集客の入口</span><span class="ds">そもそも見つけてもらえているか</span></span></div>
-      <div class="node"><span class="marker mono">02</span><span><span class="en mono">List</span><span class="jp">見込み客リスト</span><span class="ds">LINE・メール等で接点が持てているか</span></span></div>
-      <div class="node"><span class="marker mono">03</span><span><span class="en mono">Nurture</span><span class="jp">関係づくり</span><span class="ds">発信や連絡で信頼・興味が育っているか</span></span></div>
-      <div class="node"><span class="marker mono">04</span><span><span class="en mono">Offer</span><span class="jp">提案設計</span><span class="ds">提案の内容・価格・見せ方が伝わるか</span></span></div>
-      <div class="node"><span class="marker mono">05</span><span><span class="en mono">Conversion</span><span class="jp">申込・成約</span><span class="ds">申込や購入につながる導線になっているか</span></span></div>
-      <div class="node"><span class="marker mono">06</span><span><span class="en mono">Measurement</span><span class="jp">計測・改善</span><span class="ds">数字を見て、次の改善に活かせているか</span></span></div>
+    <div class="label mono">LENS</div>
+    <h2>見る観点は、6つ。</h2>
+    <div class="lens">
+      <div><span class="en mono">Traffic</span><span class="jp">集客の入口</span></div>
+      <div><span class="en mono">List</span><span class="jp">見込み客リスト</span></div>
+      <div><span class="en mono">Nurture</span><span class="jp">関係づくり</span></div>
+      <div><span class="en mono">Offer</span><span class="jp">提案設計</span></div>
+      <div><span class="en mono">Conversion</span><span class="jp">申込・成約</span></div>
+      <div><span class="en mono">Measurement</span><span class="jp">計測・改善</span></div>
     </div>
   </div>
 </section>
 
-<section id="output" class="bg-dark">
+<section class="hair" id="output">
   <div class="wrap">
-    <div class="sec-label mono">EVERY WEEK</div>
-    <h2 class="sec-title">毎回、必ずここまで出します。</h2>
-    <div class="out-grid">
-      <div class="out"><span class="n mono">OUTPUT 01</span><p class="t">一番大きなボトルネック</p><p class="d">全部を直すのではなく、いま最も詰まっている一箇所を特定します。</p></div>
-      <div class="out"><span class="n mono">OUTPUT 02</span><p class="t">次にやるAction</p><p class="d">見て終わりにせず、次に何をやるかまで明確にします。</p></div>
+    <div class="label mono">OUTPUT</div>
+    <h2>毎回、ここまで整理します。</h2>
+    <div class="out">
+      <p><b>一番大きなボトルネック</b><span>全部を直すのではなく、いま最も詰まっている一箇所を特定します。</span></p>
+      <p><b>次にやるAction</b><span>見て終わりにせず、次に何をやるかまで明確にします。</span></p>
     </div>
   </div>
 </section>
 
-<section id="theme" class="bg-panel">
+<section class="hair" id="theme">
   <div class="wrap">
-    <div class="sec-label mono">THIS WEEK'S CASE</div>
-    <h2 class="sec-title">今回診断する課題</h2>
-    <div class="theme-card" id="themeCard">
-      <span class="k mono" id="themeKey">NEXT LIVE — 9/24(木) 21:00</span>
-      <p class="t" id="themeTitle">診断する課題は、決まり次第このページとLINE公式でお知らせします。</p>
-      <p class="d" id="themeDesc">診断を受けたい方は、下のボタンからご応募ください。</p>
-      <div class="tags" id="themeTags" hidden></div>
+    <div class="label mono">THIS WEEK</div>
+    <h2>今回診断する課題</h2>
+    <div class="next">
+      <p class="d mono" id="themeKey">NEXT — 9/24(木) 21:00</p>
+      <p class="t" id="themeTitle">診断する課題は、決まり次第このページでお知らせします。</p>
+      <p class="s" id="themeDesc"></p>
+      <div class="tags mono" id="themeTags" hidden></div>
     </div>
   </div>
 </section>
 
-<section id="join">
+<section class="hair" id="cases" hidden>
   <div class="wrap">
-    <div class="sec-label mono">HOW TO JOIN</div>
-    <h2 class="sec-title">視聴と、公開診断への応募。</h2>
-    <div class="entries">
-      <div class="entry">
-        <span class="k mono">WATCH</span>
-        <h3>視聴したい</h3>
-        <p>他のトレーナーの診断を見ながら、自分の集客のどこが詰まっているかを考えるヒントにしたい方。</p>
-        <p class="note">視聴の事前受付はありません。LIVEの視聴方法は、トレーナー集客ノートLINE公式でご案内します。</p>
-      </div>
-      <div class="entry">
-        <span class="k mono">GET DIAGNOSED</span>
-        <h3>公開診断を受けたい</h3>
-        <p>自分の集客状況を、LIVEの中で診断してほしい方。診断対象は、毎回その週の診断枠で決まります。</p>
-        <p class="note">応募は、このページのフォームから受け付けています。</p>
-        <a class="btn" data-cta="entry_apply" href="#apply">公開診断に応募する<span class="arrow">→</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="cases" class="bg-panel" hidden>
-  <div class="wrap">
-    <div class="sec-label mono">PAST CASES</div>
-    <h2 class="sec-title">過去の診断事例</h2>
+    <div class="label mono">PAST</div>
+    <h2>これまでの診断</h2>
     <div class="cases" id="casesList"></div>
   </div>
 </section>
 
-<section id="apply" class="bg-panel final">
+<section class="hair" id="apply">
   <div class="wrap">
-    <div class="sec-label mono" style="display:flex;justify-content:center;">APPLY</div>
-    <h2 class="sec-title">自分の集客を、<br>公開診断してもらう。</h2>
-    <p class="sec-body">以下のフォームからご応募ください。LIVEの中で診断させていただく方を選び、ご連絡します。</p>
-    <div class="form-wrap"><iframe id="applyForm" title="公開診断 応募フォーム" src="https://docs.google.com/forms/d/e/1FAIpQLSfA_uGIuE2LtTexfPTc52gu5oBsVz5zEEYFeWRCUO65dZXdCA/viewform?embedded=true" loading="lazy">読み込んでいます…</iframe></div>
-    <p class="form-fallback">フォームが表示されない場合は<a href="https://docs.google.com/forms/d/e/1FAIpQLSfA_uGIuE2LtTexfPTc52gu5oBsVz5zEEYFeWRCUO65dZXdCA/viewform" target="_blank" rel="noopener" data-cta="fallback">こちらから直接開いて</a>ご応募ください。</p>
-    <p class="cross">LIVEの視聴方法は、トレーナー集客ノートLINE公式でご案内します。(視聴の事前受付はありません)</p>
-    <p class="cross">個別で診断を受けたい方は <a href="https://bal-bottleneck-diagnosis-lp.vercel.app/">集客ボトルネック診断(60分・個別)</a> へ</p>
+    <div class="label mono">APPLY</div>
+    <h2>公開診断に応募する</h2>
+    <p class="body">自分の集客状況を、LIVEの中で一緒に見てほしい方は、こちらからご応募ください。診断する方を選び、ご連絡します。</p>
+    <div class="formbox"><iframe id="applyForm" title="公開診断 応募フォーム" src="https://docs.google.com/forms/d/e/1FAIpQLSfA_uGIuE2LtTexfPTc52gu5oBsVz5zEEYFeWRCUO65dZXdCA/viewform?embedded=true" loading="lazy">読み込んでいます…</iframe></div>
+    <p class="fallback">フォームが表示されない場合は<a href="https://docs.google.com/forms/d/e/1FAIpQLSfA_uGIuE2LtTexfPTc52gu5oBsVz5zEEYFeWRCUO65dZXdCA/viewform" target="_blank" rel="noopener" data-cta="fallback">こちらから直接開いて</a>ご応募ください。</p>
+    <p class="note">視聴方法は、<span class="nb">トレーナー集客ノートLINE公式で</span> <span class="nb">ご案内します。</span>(視聴の事前受付はありません)</p>
   </div>
 </section>
+</main>
 
-<footer>トレーナー集客ノート — 公開・集客ボトルネック診断LIVE</footer>
+<footer><div class="wrap">トレーナー集客ノート</div></footer>
 
 <script defer src="/_vercel/insights/script.js"></script>
 <script>
@@ -256,9 +186,9 @@
    theme       : 今回診断する課題(未定なら null)
    themeNote   : 課題の補足(任意)
    perspectives: 主に扱う観点(任意) 例 ["Traffic","Offer"]
-   caseSummary : 開催後に事例として載せる場合のみ記入
+   caseSummary : 実施後に事例として載せる場合のみ記入
                  { bottleneck: "一番大きなボトルネック", action: "次のAction" }
-   日付が過ぎた回は自動で「過去回」へ移り、caseSummaryがあれば事例欄に表示される。
+   日付が過ぎた回は自動で過去回へ移り、caseSummaryがあれば事例欄に表示される。
    登録が無い週は「毎週木曜21:00」を自動計算して表示する。
    ============================================================ */
 var SESSIONS = [
@@ -267,10 +197,10 @@ var SESSIONS = [
 </script>
 <script>
 (function(){
-  var JST = 9*3600*1000, DUR = 2*3600*1000; /* 開始から2時間は「開催中」として次回に切り替えない */
+  var JST = 9*3600*1000, DUR = 2*3600*1000;
   var WD = ["日","月","火","水","木","金","土"];
   function fmt(ms){ var d = new Date(ms + JST); return (d.getUTCMonth()+1)+"/"+d.getUTCDate()+"("+WD[d.getUTCDay()]+") "+("0"+d.getUTCHours()).slice(-2)+":"+("0"+d.getUTCMinutes()).slice(-2); }
-  function nextThu(from){ /* from以降で最初の木曜21:00 JST */
+  function nextThu(from){
     var j = new Date(from + JST); var add = (4 - j.getUTCDay() + 7) % 7;
     var t = Date.UTC(j.getUTCFullYear(), j.getUTCMonth(), j.getUTCDate() + add, 21, 0, 0) - JST;
     if (t + DUR <= from) t += 7*24*3600*1000;
@@ -280,19 +210,17 @@ var SESSIONS = [
   var list = SESSIONS.map(function(s){ s._t = Date.parse(s.date); return s; }).sort(function(a,b){ return a._t - b._t; });
   var upcoming = null, past = [];
   list.forEach(function(s){ if (s._t + DUR > now) { if (!upcoming) upcoming = s; } else past.push(s); });
-  if (!upcoming) { var t = nextThu(now); upcoming = { _t: t, theme: null, themeNote: "", perspectives: [], first: false }; }
+  if (!upcoming) { upcoming = { _t: nextThu(now), theme: null, themeNote: "", perspectives: [], first: false }; }
 
   var live = now >= upcoming._t && now < upcoming._t + DUR;
-  var dEl = document.getElementById("nextDate");
-  dEl.innerHTML = fmt(upcoming._t) + (upcoming.first ? "<small>初回開催</small>" : "") + (live ? "<small>開催中</small>" : "");
-  document.getElementById("themeKey").textContent = "NEXT LIVE — " + fmt(upcoming._t);
+  document.getElementById("nextDate").textContent = (live ? "本日開催中 " : "次回 ") + fmt(upcoming._t) + (upcoming.first ? "(初回)" : "");
+  document.getElementById("themeKey").textContent = "NEXT — " + fmt(upcoming._t);
   if (upcoming.theme) {
     document.getElementById("themeTitle").textContent = upcoming.theme;
     document.getElementById("themeDesc").textContent = upcoming.themeNote || "";
     var tg = document.getElementById("themeTags");
     if (upcoming.perspectives && upcoming.perspectives.length) {
-      tg.innerHTML = upcoming.perspectives.map(function(p){ return '<span class="tag mono"></span>'; }).join("");
-      Array.prototype.forEach.call(tg.children, function(el, i){ el.textContent = upcoming.perspectives[i]; });
+      upcoming.perspectives.forEach(function(p){ var el = document.createElement("span"); el.textContent = p; tg.appendChild(el); });
       tg.hidden = false;
     }
   }
@@ -305,7 +233,7 @@ var SESSIONS = [
       var a = document.createElement("div"); a.className = "dt mono"; a.textContent = fmt(s._t);
       var b = document.createElement("div"); b.className = "tt"; b.textContent = s.theme || "公開診断";
       var p = document.createElement("div"); p.className = "bn";
-      var bn = document.createElement("b"); bn.textContent = "最大のボトルネック: ";
+      var bn = document.createElement("b"); bn.textContent = "一番大きなボトルネック: ";
       p.appendChild(bn); p.appendChild(document.createTextNode(s.caseSummary.bottleneck || ""));
       c.appendChild(a); c.appendChild(b); c.appendChild(p);
       if (s.caseSummary.action) { var q = document.createElement("div"); q.className = "bn"; var ab = document.createElement("b"); ab.textContent = "次のAction: "; q.appendChild(ab); q.appendChild(document.createTextNode(s.caseSummary.action)); c.appendChild(q); }
@@ -314,7 +242,6 @@ var SESSIONS = [
     document.getElementById("cases").hidden = false;
   }
 
-  /* 計測 */
   var params = new URLSearchParams(location.search);
   function track(name, data){ try { if (window.va) window.va("event", { name: name, data: data || {} }); } catch(e){} }
   track("live_lp_view", { utm_source: params.get("utm_source"), utm_medium: params.get("utm_medium"), utm_campaign: params.get("utm_campaign") });
