@@ -74,9 +74,28 @@
   .case .bn { margin-top:6px; font-size:14px; color:var(--ink-soft); }
   .case .bn b { color:var(--ink); }
 
-  .formbox { margin-top:34px; border:1px solid var(--line); border-radius:2px; overflow:hidden; }
+  #apply { background:#F7F7F5; border-top:0; padding:clamp(72px,11vh,112px) 0 clamp(72px,11vh,112px); }
+  #apply .wrap { max-width:680px; }
+  .sub-h { margin:0; font-size:15px; font-weight:700; letter-spacing:0.01em; }
+  .fit { margin-top:68px; }
+  .fit .sub-h { font-size:clamp(18px,3vw,20px); line-height:1.6; }
+  .fit ul { list-style:none; margin:16px 0 0; padding:0; }
+  .fit li { position:relative; padding:9px 0 9px 26px; font-size:15px; color:var(--ink); line-height:1.8; }
+  .fit li::before { content:"—"; position:absolute; left:0; color:var(--accent); }
+  .notice { margin-top:40px; background:#fff; border:1px solid #E6E5E0; border-radius:10px; padding:22px 26px; }
+  .notice .sub-h { font-size:13.5px; font-weight:700; color:var(--ink-soft); letter-spacing:0.02em; }
+  .notice ul { list-style:none; margin:10px 0 0; padding:0; }
+  .notice li { position:relative; padding:3px 0 3px 16px; font-size:14.5px; color:var(--ink); line-height:1.9; }
+  .notice li::before { content:"・"; position:absolute; left:-2px; color:var(--ink-faint); }
+  .notice p { margin-top:8px; font-size:13.5px; color:var(--ink-soft); }
+  .formbox { margin-top:18px; background:#fff; border:1px solid #E4E3DD; border-radius:12px; box-shadow:0 1px 3px rgba(20,20,18,0.04); overflow:hidden; }
   .formbox iframe { display:block; width:100%; height:1180px; border:0; }
-  .fallback { margin-top:16px; font-size:12.5px; color:var(--ink-faint); }
+  .flow { margin-top:52px; }
+  .flow ol { list-style:none; margin:16px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:0 24px; }
+  .flow li { border-top:1px solid #DAD9D3; padding:14px 0 0; font-size:15px; font-weight:700; line-height:1.7; }
+  .flow li span { display:block; margin-bottom:2px; font-size:11.5px; font-weight:500; letter-spacing:0.1em; color:var(--accent); }
+  .fallback { margin-top:14px; font-size:12.5px; color:var(--ink-faint); }
+  #apply .note { margin-top:30px; }
   .fallback a { color:var(--accent); text-decoration:underline; }
 
   footer { padding:56px 0 84px; font-size:12px; color:var(--ink-faint); border-top:1px solid var(--line); }
@@ -86,6 +105,8 @@
     .lens { grid-template-columns:repeat(2,1fr); }
     .cta { width:100%; justify-content:center; }
     .formbox iframe { height:1320px; }
+    .flow ol { grid-template-columns:1fr; gap:14px 0; }
+    .notice { padding:20px 20px; }
   }
 </style>
 </head>
@@ -164,14 +185,43 @@
   </div>
 </section>
 
-<section class="hair" id="apply">
+<section id="apply">
   <div class="wrap">
     <div class="label mono">APPLY</div>
     <h2>公開診断に応募する</h2>
     <p class="body">自分の集客状況を、LIVEの中で一緒に見てほしい方は、こちらからご応募ください。診断する方を選び、ご連絡します。</p>
+
+    <div class="fit">
+      <h3 class="sub-h">こんな方に向いています</h3>
+      <ul>
+        <li>何から直せばいいか分からない</li>
+        <li>LINEやLPを作っても反応が弱い</li>
+        <li>自分のボトルネックを整理したい</li>
+      </ul>
+    </div>
+
+    <div class="notice">
+      <h3 class="sub-h">応募前にご確認ください</h3>
+      <ul>
+        <li>現在の集客状況</li>
+        <li>今いちばん困っていること</li>
+        <li>公開で扱ってよい範囲</li>
+      </ul>
+      <p>をフォーム内でお聞きします。</p>
+    </div>
+
     <div class="formbox"><iframe id="applyForm" title="公開診断 応募フォーム" src="https://docs.google.com/forms/d/e/1FAIpQLSfA_uGIuE2LtTexfPTc52gu5oBsVz5zEEYFeWRCUO65dZXdCA/viewform?embedded=true" loading="lazy">読み込んでいます…</iframe></div>
     <p class="fallback">フォームが表示されない場合は<a href="https://docs.google.com/forms/d/e/1FAIpQLSfA_uGIuE2LtTexfPTc52gu5oBsVz5zEEYFeWRCUO65dZXdCA/viewform" target="_blank" rel="noopener" data-cta="fallback">こちらから直接開いて</a>ご応募ください。</p>
-    <p class="note">視聴方法は<span class="nb">トレーナー集客ノートLINE公式で</span><wbr><span class="nb">ご案内します。</span>(視聴の事前受付はありません)</p>
+
+    <div class="flow">
+      <h3 class="sub-h">応募後の流れ</h3>
+      <ol>
+        <li><span class="mono">01</span>内容確認</li>
+        <li><span class="mono">02</span>診断する方へご連絡</li>
+        <li><span class="mono">03</span>当日のご案内</li>
+      </ol>
+    </div>
+    <p class="note">※視聴方法は<span class="nb">トレーナー集客ノートLINE公式で</span><wbr><span class="nb">ご案内します。</span></p>
   </div>
 </section>
 </main>
