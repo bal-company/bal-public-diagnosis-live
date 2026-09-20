@@ -96,7 +96,6 @@
   .entry p { margin-top:10px; font-size:14px; color:var(--ink-soft); flex:1; }
   .entry .btn { margin-top:20px; font-size:14px; padding:14px 20px; }
   .entry .note { margin-top:14px; padding-top:14px; border-top:1px solid var(--line-soft); font-size:13px; color:var(--ink); flex:none; }
-  .how { margin:16px 0 0; padding-left:20px; font-size:13.5px; color:var(--ink); line-height:1.9; }
 
   /* Past cases */
   .cases { margin-top:8px; display:flex; flex-direction:column; }
@@ -111,12 +110,17 @@
   .final { text-align:center; }
   .final .sec-title { max-width:26ch; margin-left:auto; margin-right:auto; }
   .final .sec-body { margin:0 auto 32px; }
-  .cross { margin-top:22px; font-size:12.5px; color:var(--ink-on-dark-soft); }
-  .cross a { color:var(--ink-on-dark); text-decoration:underline; }
+  .cross { margin-top:20px; font-size:12.5px; color:var(--ink-soft); }
+  .cross a { color:var(--ink); text-decoration:underline; }
+  .form-wrap { background:var(--bg); border:1px solid var(--line); border-radius:6px; overflow:hidden; text-align:left; }
+  .form-wrap iframe { display:block; width:100%; height:1180px; border:0; }
+  .form-fallback { margin-top:16px; font-size:12.5px; color:var(--ink-faint); }
+  .form-fallback a { color:var(--accent); text-decoration:underline; }
+  .final .sec-body { margin:0 auto 28px; }
 
   footer { padding:36px 0 64px; text-align:center; font-size:12px; color:var(--ink-faint); border-top:1px solid var(--line); }
   [hidden] { display:none !important; }
-  @media (max-width:480px){ .brand{ font-size:11px; white-space:nowrap; } .btn-sm{ font-size:12px; padding:9px 12px; } .btn-lg { width:100%; padding:19px 20px; } .hero-frame span:last-child{ display:none; } }
+  @media (max-width:480px){ .brand{ font-size:11px; white-space:nowrap; } .btn-sm{ font-size:12px; padding:9px 12px; } .btn-lg { width:100%; padding:19px 20px; } .form-wrap iframe { height:1320px; } .hero-frame span:last-child{ display:none; } }
 </style>
 </head>
 <body>
@@ -124,7 +128,7 @@
 <div class="topbar">
   <div class="topbar-inner">
     <div class="brand mono"><b>トレーナー集客ノート</b> / LIVE</div>
-    <a class="btn btn-sm" data-line="topbar" href="https://lin.ee/RGAlJIE" target="_blank" rel="noopener">公開診断に応募する</a>
+    <a class="btn btn-sm" data-cta="topbar" href="#apply">公開診断に応募する</a>
   </div>
 </div>
 
@@ -145,8 +149,8 @@
     </div>
 
     <div class="hero-cta">
-      <a class="btn btn-lg" data-line="hero" href="https://lin.ee/RGAlJIE" target="_blank" rel="noopener">公開診断に応募する<span class="arrow">→</span></a>
-      <div class="hero-note"><p>応募方法：ボタンからLINE公式に移動し、「診断希望」と返信してください。</p><p>LIVEの視聴方法は、トレーナー集客ノートLINE公式でご案内します。</p></div>
+      <a class="btn btn-lg" data-cta="hero" href="#apply">公開診断に応募する<span class="arrow">→</span></a>
+      <div class="hero-note"><p>応募はこのページのフォームから受け付けています。</p><p>LIVEの視聴方法は、トレーナー集客ノートLINE公式でご案内します。</p></div>
     </div>
   </div>
 </header>
@@ -215,8 +219,8 @@
         <span class="k mono">GET DIAGNOSED</span>
         <h3>公開診断を受けたい</h3>
         <p>自分の集客状況を、LIVEの中で診断してほしい方。診断対象は、毎回その週の診断枠で決まります。</p>
-        <ol class="how"><li>ボタンからLINE公式に移動</li><li>「診断希望」と返信</li></ol>
-        <a class="btn" data-line="entry_apply" href="https://lin.ee/RGAlJIE" target="_blank" rel="noopener">公開診断に応募する<span class="arrow">→</span></a>
+        <p class="note">応募は、このページのフォームから受け付けています。</p>
+        <a class="btn" data-cta="entry_apply" href="#apply">公開診断に応募する<span class="arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -230,13 +234,14 @@
   </div>
 </section>
 
-<section id="final" class="bg-dark final">
+<section id="apply" class="bg-panel final">
   <div class="wrap">
     <div class="sec-label mono" style="display:flex;justify-content:center;">APPLY</div>
     <h2 class="sec-title">自分の集客を、<br>公開診断してもらう。</h2>
-    <p class="sec-body">応募はLINE公式から。移動後、「診断希望」と返信してください。</p>
-    <a class="btn btn-lg btn-light" data-line="final" href="https://lin.ee/RGAlJIE" target="_blank" rel="noopener">公開診断に応募する<span class="arrow">→</span></a>
-    <p class="cross">LIVEの視聴方法は、トレーナー集客ノートLINE公式でご案内します。</p>
+    <p class="sec-body">以下のフォームからご応募ください。LIVEの中で診断させていただく方を選び、ご連絡します。</p>
+    <div class="form-wrap"><iframe id="applyForm" title="公開診断 応募フォーム" src="https://docs.google.com/forms/d/e/1FAIpQLSfA_uGIuE2LtTexfPTc52gu5oBsVz5zEEYFeWRCUO65dZXdCA/viewform?embedded=true" loading="lazy">読み込んでいます…</iframe></div>
+    <p class="form-fallback">フォームが表示されない場合は<a href="https://docs.google.com/forms/d/e/1FAIpQLSfA_uGIuE2LtTexfPTc52gu5oBsVz5zEEYFeWRCUO65dZXdCA/viewform" target="_blank" rel="noopener" data-cta="fallback">こちらから直接開いて</a>ご応募ください。</p>
+    <p class="cross">LIVEの視聴方法は、トレーナー集客ノートLINE公式でご案内します。(視聴の事前受付はありません)</p>
     <p class="cross">個別で診断を受けたい方は <a href="https://bal-bottleneck-diagnosis-lp.vercel.app/">集客ボトルネック診断(60分・個別)</a> へ</p>
   </div>
 </section>
@@ -259,7 +264,6 @@
 var SESSIONS = [
   { date: "2026-09-24T21:00:00+09:00", theme: null, themeNote: "", perspectives: [], caseSummary: null, first: true }
 ];
-var LINE_URL = "https://lin.ee/RGAlJIE";
 </script>
 <script>
 (function(){
@@ -315,8 +319,8 @@ var LINE_URL = "https://lin.ee/RGAlJIE";
   function track(name, data){ try { if (window.va) window.va("event", { name: name, data: data || {} }); } catch(e){} }
   track("live_lp_view", { utm_source: params.get("utm_source"), utm_medium: params.get("utm_medium"), utm_campaign: params.get("utm_campaign") });
   document.addEventListener("click", function(ev){
-    var a = ev.target && ev.target.closest ? ev.target.closest("a[data-line]") : null;
-    if (a) track("live_line_cta_click", { position: a.getAttribute("data-line") });
+    var a = ev.target && ev.target.closest ? ev.target.closest("a[data-cta]") : null;
+    if (a) track("live_apply_cta_click", { position: a.getAttribute("data-cta") });
   }, true);
 })();
 </script>
